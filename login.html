@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Login — WanderSphere Travel</title>
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <!-- Font Awesome Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  <!-- Shared CSS -->
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+  <!-- ==========================================
+       LOGIN PAGE — Full-screen with blurred bg
+       ========================================== -->
+  <div class="auth-page">
+    <!-- Background Image -->
+    <div class="auth-bg">
+      <img src="https://images.unsplash.com/photo-1476514525535-07fb3b4ae5f1?w=1920&q=80" alt="Travel background">
+    </div>
+
+    <!-- Login Card (Glassmorphism style) -->
+    <div class="auth-card">
+      <!-- Logo -->
+      <div class="logo"><i class="fa-solid fa-earth-americas"></i></div>
+      <h2>Welcome Back</h2>
+      <p class="subtitle">Sign in to access your travel dashboard</p>
+
+      <!-- Login Form -->
+      <form onsubmit="handleLogin(event)">
+        <!-- Email Field -->
+        <div class="form-group">
+          <label for="loginEmail">Email Address</label>
+          <div class="input-wrapper">
+            <i class="fa-solid fa-envelope field-icon"></i>
+            <input type="email" id="loginEmail" placeholder="hello@example.com" required>
+          </div>
+        </div>
+        <!-- Password Field with Show/Hide Toggle -->
+        <div class="form-group">
+          <label for="loginPassword">Password</label>
+          <div class="input-wrapper">
+            <i class="fa-solid fa-lock field-icon"></i>
+            <input type="password" id="loginPassword" placeholder="Enter your password" required>
+            <button type="button" class="toggle-password" onclick="togglePassword('loginPassword', this)">
+              <i class="fa-regular fa-eye"></i>
+            </button>
+          </div>
+        </div>
+        <!-- Remember Me & Forgot Password -->
+        <div class="form-options">
+          <label><input type="checkbox"> Remember me</label>
+          <a href="#">Forgot password?</a>
+        </div>
+        <!-- Submit Button -->
+        <button type="submit" class="btn btn-ocean">
+          <i class="fa-solid fa-right-to-bracket"></i> Sign In
+        </button>
+      </form>
+
+      <!-- Social Login Divider -->
+      <div class="auth-divider">or continue with</div>
+
+      <!-- Social Login Buttons -->
+      <div class="social-login">
+        <button type="button"><i class="fa-brands fa-google" style="color:#ea4335;"></i> Google</button>
+        <button type="button"><i class="fa-brands fa-apple" style="color:#000;"></i> Apple</button>
+      </div>
+
+      <!-- Sign Up Link -->
+      <div class="auth-footer">
+        Don't have an account? <a href="#">Sign Up</a>
+      </div>
+
+      <!-- Back to Home Link -->
+      <div style="text-align:center; margin-top:1.2rem;">
+        <a href="index.html" style="color:var(--gray-400); font-size:0.85rem; display:inline-flex; align-items:center; gap:0.3rem;">
+          <i class="fa-solid fa-arrow-left"></i> Back to Home
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <!-- Shared JavaScript -->
+  <script src="script.js"></script>
+</body>
+</html>

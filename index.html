@@ -1,0 +1,337 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>WanderSphere — Travel With No Limits</title>
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <!-- Font Awesome Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  <!-- Shared CSS -->
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+  <!-- ==========================================
+       NAVBAR (transparent on hero, solid on scroll)
+       ========================================== -->
+  <nav class="navbar" id="navbar">
+    <a href="index.html" class="nav-logo">
+      <i class="fa-solid fa-earth-americas"></i> WanderSphere
+    </a>
+    <ul class="nav-links" id="navLinks">
+      <li><a href="index.html" class="active">Home</a></li>
+      <li><a href="destinations.html">Destinations</a></li>
+      <li><a href="contact.html">Plan Your Journey</a></li>
+      <li><a href="login.html" class="nav-cta"><i class="fa-solid fa-user"></i> Login</a></li>
+    </ul>
+    <button class="hamburger" id="hamburger" onclick="toggleMenu()">
+      <span></span><span></span><span></span>
+    </button>
+  </nav>
+  <div class="nav-overlay" id="navOverlay" onclick="toggleMenu()"></div>
+
+  <!-- ==========================================
+       HERO SECTION
+       ========================================== -->
+  <section class="hero">
+    <div class="hero-bg">
+      <img src="https://images.unsplash.com/photo-1506929562872-bb421503ef21?w=1920&q=80" alt="Beautiful tropical beach">
+    </div>
+    <div class="hero-overlay"></div>
+    <div class="hero-content">
+      <div class="hero-badge">
+        <i class="fa-solid fa-plane"></i> Explore the World with Us
+      </div>
+      <h1>Travel With <span>No Limits</span></h1>
+      <p>Discover breathtaking destinations, create unforgettable memories, and embark on journeys that will transform your perspective of the world.</p>
+      <div class="hero-buttons">
+        <a href="destinations.html" class="btn btn-primary">
+          <i class="fa-solid fa-compass"></i> Explore Destinations
+        </a>
+        <a href="contact.html" class="btn btn-secondary">
+          <i class="fa-regular fa-paper-plane"></i> Plan Your Journey
+        </a>
+      </div>
+    </div>
+    <div class="scroll-indicator">
+      <div class="mouse"></div>
+      Scroll Down
+    </div>
+  </section>
+
+  <!-- ==========================================
+       SERVICES SECTION
+       ========================================== -->
+  <section class="section" style="background: var(--gray-50);">
+    <div class="container">
+      <div class="section-header reveal">
+        <div class="section-label"><i class="fa-solid fa-star"></i> Our Services</div>
+        <h2 class="section-title">Everything You Need for the Perfect Trip</h2>
+        <p class="section-subtitle">From planning to exploration, we've got every aspect of your journey covered.</p>
+      </div>
+      <div class="services-grid">
+        <div class="service-card reveal" style="transition-delay: 0.1s;">
+          <div class="service-icon icon-blue"><i class="fa-solid fa-hotel"></i></div>
+          <h3>Premium Hotels</h3>
+          <p>Book comfortable hotels at the best prices. Safe, easy, and reliable reservations for every budget and taste.</p>
+        </div>
+        <div class="service-card reveal" style="transition-delay: 0.2s;">
+          <div class="service-icon icon-orange"><i class="fa-solid fa-person-hiking"></i></div>
+          <h3>Adventure Hiking</h3>
+          <p>Join exciting hiking trips and discover beautiful natural landscapes. Safe and fun for all adventure lovers.</p>
+        </div>
+        <div class="service-card reveal" style="transition-delay: 0.3s;">
+          <div class="service-icon icon-teal"><i class="fa-solid fa-route"></i></div>
+          <h3>Guided Tours</h3>
+          <p>Expert local guides take you through hidden gems and iconic landmarks with fascinating stories.</p>
+        </div>
+        <div class="service-card reveal" style="transition-delay: 0.4s;">
+          <div class="service-icon icon-pink"><i class="fa-solid fa-headset"></i></div>
+          <h3>24/7 Support</h3>
+          <p>Our team is available around the clock to assist you anytime. Travel with confidence and peace of mind.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==========================================
+       POPULAR DESTINATIONS SECTION
+       ========================================== -->
+  <section class="section">
+    <div class="container">
+      <div class="section-header reveal">
+        <div class="section-label"><i class="fa-solid fa-location-dot"></i> Popular Destinations</div>
+        <h2 class="section-title">Handpicked Places Just for You</h2>
+        <p class="section-subtitle">Explore our curated collection of the world's most stunning destinations.</p>
+      </div>
+      <div class="destinations-grid">
+        <!-- Bali Card -->
+        <div class="dest-card reveal" style="transition-delay: 0.1s;">
+          <div class="dest-card-img">
+            <img src="https://images.unsplash.com/photo-1537996194471-e657df975ab4?w=700&q=80" alt="Bali Indonesia">
+            <div class="dest-card-badge"><i class="fa-solid fa-fire" style="color:var(--sunset);"></i> Trending</div>
+            <div class="dest-card-price">From $899</div>
+          </div>
+          <div class="dest-card-body">
+            <h3>Bali, Indonesia</h3>
+            <p>Experience tropical paradise with stunning temples, lush rice terraces, and pristine beaches.</p>
+            <div class="dest-card-meta">
+              <span><i class="fa-solid fa-clock"></i> 7 Days</span>
+              <span class="dest-stars"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></span>
+              <span><i class="fa-solid fa-users"></i> 2.4k booked</span>
+            </div>
+          </div>
+        </div>
+        <!-- Venice Card -->
+        <div class="dest-card reveal" style="transition-delay: 0.2s;">
+          <div class="dest-card-img">
+            <img src="https://images.unsplash.com/photo-1523906834658-6e24ef2386f9?w=700&q=80" alt="Venice Italy">
+            <div class="dest-card-badge"><i class="fa-solid fa-heart" style="color:var(--coral);"></i> Most Loved</div>
+            <div class="dest-card-price">From $1,299</div>
+          </div>
+          <div class="dest-card-body">
+            <h3>Venice, Italy</h3>
+            <p>Float through romantic canals, marvel at Renaissance architecture, and savor authentic Italian cuisine.</p>
+            <div class="dest-card-meta">
+              <span><i class="fa-solid fa-clock"></i> 5 Days</span>
+              <span class="dest-stars"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star-half-stroke"></i></span>
+              <span><i class="fa-solid fa-users"></i> 1.8k booked</span>
+            </div>
+          </div>
+        </div>
+        <!-- Kyoto Card -->
+        <div class="dest-card reveal" style="transition-delay: 0.3s;">
+          <div class="dest-card-img">
+            <img src="https://images.unsplash.com/photo-1493976040374-85c8e12f0c0e?w=700&q=80" alt="Kyoto Japan">
+            <div class="dest-card-badge"><i class="fa-solid fa-gem" style="color:var(--teal);"></i> Exclusive</div>
+            <div class="dest-card-price">From $1,599</div>
+          </div>
+          <div class="dest-card-body">
+            <h3>Kyoto, Japan</h3>
+            <p>Wander through ancient temples, bamboo groves, and vibrant gardens in Japan's cultural heartland.</p>
+            <div class="dest-card-meta">
+              <span><i class="fa-solid fa-clock"></i> 8 Days</span>
+              <span class="dest-stars"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></span>
+              <span><i class="fa-solid fa-users"></i> 1.2k booked</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==========================================
+       ABOUT SECTION
+       ========================================== -->
+  <section class="section" style="background: var(--gray-50);">
+    <div class="container">
+      <div class="about-grid">
+        <div class="about-image reveal-left">
+          <img src="https://images.unsplash.com/photo-1469854523086-cc02fe5d8800?w=800&q=80" alt="Travel adventure">
+          <div class="about-float-card">
+            <div class="icon"><i class="fa-solid fa-trophy"></i></div>
+            <div class="text">
+              <h4>12+ Years</h4>
+              <p>of Travel Excellence</p>
+            </div>
+          </div>
+        </div>
+        <div class="about-content reveal-right">
+          <div class="section-label"><i class="fa-solid fa-compass"></i> About Us</div>
+          <h3>We Believe Travel Should Be Simple, Inspiring & Unforgettable</h3>
+          <p>Our goal is to help you discover amazing destinations, plan with confidence, and explore the world your way. With over a decade of experience, we've helped thousands of travelers create memories that last a lifetime.</p>
+          <p>Wherever you're headed, we're here to guide you with personalized itineraries, expert advice, and 24/7 support throughout your journey.</p>
+          <div class="about-stats">
+            <div class="stat">
+              <h4>50K+</h4>
+              <p>Happy Travelers</p>
+            </div>
+            <div class="stat">
+              <h4>120+</h4>
+              <p>Destinations</p>
+            </div>
+            <div class="stat">
+              <h4>4.9</h4>
+              <p>Average Rating</p>
+            </div>
+          </div>
+          <a href="destinations.html" class="btn btn-primary">
+            <i class="fa-solid fa-arrow-right"></i> View Destinations
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==========================================
+       TESTIMONIALS SECTION
+       ========================================== -->
+  <section class="section">
+    <div class="container">
+      <div class="section-header reveal">
+        <div class="section-label"><i class="fa-solid fa-quote-left"></i> Testimonials</div>
+        <h2 class="section-title">What Our Travelers Say</h2>
+        <p class="section-subtitle">Real stories from real adventurers who explored the world with us.</p>
+      </div>
+      <div class="testimonials-grid">
+        <div class="testimonial-card reveal" style="transition-delay: 0.1s;">
+          <div class="testimonial-stars">
+            <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+          </div>
+          <blockquote>"An absolutely incredible experience! The Bali trip was perfectly planned — every detail was taken care of. I'll definitely be booking again!"</blockquote>
+          <div class="testimonial-author">
+            <img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=100&q=80" alt="Sarah">
+            <div>
+              <h4>Sarah Mitchell</h4>
+              <p>Bali, Indonesia Trip</p>
+            </div>
+          </div>
+        </div>
+        <div class="testimonial-card reveal" style="transition-delay: 0.2s;">
+          <div class="testimonial-stars">
+            <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+          </div>
+          <blockquote>"From the moment I booked to the moment I came home, everything was seamless. The guided tours in Japan were beyond magical!"</blockquote>
+          <div class="testimonial-author">
+            <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=100&q=80" alt="James">
+            <div>
+              <h4>James Rodriguez</h4>
+              <p>Kyoto, Japan Trip</p>
+            </div>
+          </div>
+        </div>
+        <div class="testimonial-card reveal" style="transition-delay: 0.3s;">
+          <div class="testimonial-stars">
+            <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star-half-stroke"></i>
+          </div>
+          <blockquote>"The support team is amazing! They helped us reschedule last minute and made sure we still had the trip of a lifetime in Italy."</blockquote>
+          <div class="testimonial-author">
+            <img src="https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=100&q=80" alt="Emily">
+            <div>
+              <h4>Emily Chen</h4>
+              <p>Venice, Italy Trip</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==========================================
+       CTA SECTION
+       ========================================== -->
+  <section class="section cta-section">
+    <div class="cta-content reveal-scale">
+      <h2>Ready to Start Your Adventure?</h2>
+      <p>Join over 50,000 happy travelers who have explored the world with Wandersphere. Your dream destination is just a click away.</p>
+      <div style="display:flex;gap:1rem;justify-content:center;flex-wrap:wrap;">
+        <a href="contact.html" class="btn btn-primary">
+          <i class="fa-regular fa-paper-plane"></i> Plan Your Journey
+        </a>
+        <a href="destinations.html" class="btn btn-secondary">
+          <i class="fa-solid fa-compass"></i> Explore More
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==========================================
+       FOOTER
+       ========================================== -->
+  <footer class="footer">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <div class="logo"><i class="fa-solid fa-earth-americas"></i> WanderSphere</div>
+        <p>Your trusted travel companion for over 12 years. We help you discover, plan, and experience the world's most incredible destinations.</p>
+        <div class="social-links">
+          <a href="https://www.facebook.com/share/1Ga3H48wUg/" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
+          <a href="https://x.com/006_hemu36920" aria-label="Twitter"><i class="fa-brands fa-x-twitter"></i></a>
+          <a href="https://www.instagram.com/hemu_006__?igsh=MWFtNW92emt5N3NkYQ==" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+          <a href="#" aria-label="YouTube"><i class="fa-brands fa-youtube"></i></a>
+          <a href="#" aria-label="Pinterest"><i class="fa-brands fa-pinterest-p"></i></a>
+        </div>
+      </div>
+      <div>
+        <h4>Quick Links</h4>
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="destinations.html">Destinations</a></li>
+          <li><a href="contact.html">Plan Your Journey</a></li>
+          <li><a href="login.html">Login</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Destinations</h4>
+        <ul>
+          <li><a href="destinations.html">Bali, Indonesia</a></li>
+          <li><a href="destinations.html">Venice, Italy</a></li>
+          <li><a href="destinations.html">Kyoto, Japan</a></li>
+          <li><a href="destinations.html">Santorini, Greece</a></li>
+          <li><a href="destinations.html">Maldives</a></li>
+        </ul>
+      </div>
+      <div class="footer-newsletter">
+        <h4>Newsletter</h4>
+        <p>Subscribe for exclusive travel deals and destination inspiration delivered to your inbox.</p>
+        <form class="newsletter-form" onsubmit="handleNewsletter(event)">
+          <input type="email" placeholder="Your email address" required>
+          <button type="submit"><i class="fa-solid fa-paper-plane"></i></button>
+        </form>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>&copy; 2025 WanderSphere Travel. All rights reserved. Made with <i class="fa-solid fa-heart" style="color:var(--coral);"></i> for adventurers.</p>
+    </div>
+  </footer>
+
+  <!-- Back to Top Button -->
+  <button class="back-to-top" id="backToTop" onclick="window.scrollTo({top:0,behavior:'smooth'})">
+    <i class="fa-solid fa-arrow-up"></i>
+  </button>
+
+  <!-- Shared JavaScript -->
+  <script src="script.js"></script>
+</body>
+</html>

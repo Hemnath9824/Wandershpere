@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Destinations — Wandersphere Travel</title>
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <!-- Font Awesome Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  <!-- Shared CSS -->
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+  <!-- ==========================================
+       NAVBAR (solid style — no hero on this page)
+       ========================================== -->
+  <nav class="navbar solid" id="navbar">
+    <a href="index.html" class="nav-logo">
+      <i class="fa-solid fa-earth-americas"></i> Wanderlust
+    </a>
+    <ul class="nav-links" id="navLinks">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="destinations.html" class="active">Destinations</a></li>
+      <li><a href="contact.html">Plan Your Journey</a></li>
+      <li><a href="login.html" class="nav-cta"><i class="fa-solid fa-user"></i> Login</a></li>
+    </ul>
+    <button class="hamburger" id="hamburger" onclick="toggleMenu()">
+      <span></span><span></span><span></span>
+    </button>
+  </nav>
+  <div class="nav-overlay" id="navOverlay" onclick="toggleMenu()"></div>
+
+  <!-- ==========================================
+       DESTINATIONS HERO
+       ========================================== -->
+  <div class="destinations-page">
+    <div class="dest-hero">
+      <h1><i class="fa-solid fa-map-location-dot"></i> Explore Destinations</h1>
+      <p>From pristine beaches to ancient cities, find your perfect escape among our handpicked destinations worldwide.</p>
+    </div>
+
+    <!-- ==========================================
+         DESTINATION CARDS WITH FILTER
+         ========================================== -->
+    <section class="section">
+      <div class="container">
+        <!-- Filter Buttons -->
+        <div class="dest-filter reveal">
+          <button class="filter-btn active" onclick="filterDest('all', this)">All</button>
+          <button class="filter-btn" onclick="filterDest('beach', this)"><i class="fa-solid fa-umbrella-beach"></i> Beaches</button>
+          <button class="filter-btn" onclick="filterDest('city', this)"><i class="fa-solid fa-city"></i> Cities</button>
+          <button class="filter-btn" onclick="filterDest('nature', this)"><i class="fa-solid fa-mountain"></i> Nature</button>
+          <button class="filter-btn" onclick="filterDest('cultural', this)"><i class="fa-solid fa-landmark"></i> Cultural</button>
+        </div>
+
+        <!-- Destination Grid -->
+        <div class="destinations-grid" id="destGrid">
+          <!-- Bali -->
+          <div class="dest-card reveal" data-category="beach nature" style="transition-delay: 0.05s;">
+            <div class="dest-card-img">
+              <img src="https://images.unsplash.com/photo-1537996194471-e657df975ab4?w=700&q=80" alt="Bali">
+              <div class="dest-card-badge"><i class="fa-solid fa-fire" style="color:var(--sunset);"></i> Trending</div>
+              <div class="dest-card-price">From $899</div>
+            </div>
+            <div class="dest-card-body">
+              <h3>Bali, Indonesia</h3>
+              <p>Tropical paradise with stunning temples, lush rice terraces, and pristine beaches.</p>
+              <div class="dest-card-meta">
+                <span><i class="fa-solid fa-clock"></i> 7 Days</span>
+                <span class="dest-stars"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></span>
+              </div>
+            </div>
+          </div>
+          <!-- Venice -->
+          <div class="dest-card reveal" data-category="city cultural" style="transition-delay: 0.1s;">
+            <div class="dest-card-img">
+              <img src="https://images.unsplash.com/photo-1523906834658-6e24ef2386f9?w=700&q=80" alt="Venice">
+              <div class="dest-card-badge"><i class="fa-solid fa-heart" style="color:var(--coral);"></i> Most Loved</div>
+              <div class="dest-card-price">From $1,299</div>
+            </div>
+            <div class="dest-card-body">
+              <h3>Venice, Italy</h3>
+              <p>Romantic canals, Renaissance architecture, and authentic Italian cuisine.</p>
+              <div class="dest-card-meta">
+                <span><i class="fa-solid fa-clock"></i> 5 Days</span>
+                <span class="dest-stars"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star-half-stroke"></i></span>
+              </div>
+            </div>
+          </div>
+          <!-- Kyoto -->
+          <div class="dest-card reveal" data-category="cultural nature" style="transition-delay: 0.15s;">
+            <div class="dest-card-img">
+              <img src="https://images.unsplash.com/photo-1493976040374-85c8e12f0c0e?w=700&q=80" alt="Kyoto">
+              <div class="dest-card-badge"><i class="fa-solid fa-gem" style="color:var(--teal);"></i> Exclusive</div>
+              <div class="dest-card-price">From $1,599</div>
+            </div>
+            <div class="dest-card-body">
+              <h3>Kyoto, Japan</h3>
+              <p>Ancient temples, bamboo groves, and vibrant gardens in Japan's cultural heartland.</p>
+              <div class="dest-card-meta">
+                <span><i class="fa-solid fa-clock"></i> 8 Days</span>
+                <span class="dest-stars"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></span>
+              </div>
+            </div>
+          </div>
+          <!-- Santorini -->
+          <div class="dest-card reveal" data-category="beach city" style="transition-delay: 0.2s;">
+            <div class="dest-card-img">
+              <img src="https://images.unsplash.com/photo-1570077188670-e3a8d69ac5ff?w=700&q=80" alt="Santorini">
+              <div class="dest-card-badge"><i class="fa-solid fa-sun" style="color:var(--sunset);"></i> Summer Pick</div>
+              <div class="dest-card-price">From $1,199</div>
+            </div>
+            <div class="dest-card-body">
+              <h3>Santorini, Greece</h3>
+              <p>Iconic blue domes, dramatic sunsets, and crystalline waters of the Aegean Sea.</p>
+              <div class="dest-card-meta">
+                <span><i class="fa-solid fa-clock"></i> 6 Days</span>
+                <span class="dest-stars"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></span>
+              </div>
+            </div>
+          </div>
+          <!-- Maldives -->
+          <div class="dest-card reveal" data-category="beach" style="transition-delay: 0.25s;">
+            <div class="dest-card-img">
+              <img src="https://images.unsplash.com/photo-1514282401047-d79a71a590e8?w=700&q=80" alt="Maldives">
+              <div class="dest-card-badge"><i class="fa-solid fa-crown" style="color:var(--sunset);"></i> Luxury</div>
+              <div class="dest-card-price">From $2,499</div>
+            </div>
+            <div class="dest-card-body">
+              <h3>Maldives</h3>
+              <p>Overwater villas, turquoise lagoons, and underwater dining in pure paradise.</p>
+              <div class="dest-card-meta">
+                <span><i class="fa-solid fa-clock"></i> 5 Days</span>
+                <span class="dest-stars"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></span>
+              </div>
+            </div>
+          </div>
+          <!-- Swiss Alps -->
+          <div class="dest-card reveal" data-category="nature" style="transition-delay: 0.3s;">
+            <div class="dest-card-img">
+              <img src="https://images.unsplash.com/photo-1531366936337-7c912a4589a7?w=700&q=80" alt="Swiss Alps">
+              <div class="dest-card-badge"><i class="fa-solid fa-snowflake" style="color:var(--ocean-light);"></i> Winter</div>
+              <div class="dest-card-price">From $1,899</div>
+            </div>
+            <div class="dest-card-body">
+              <h3>Swiss Alps, Switzerland</h3>
+              <p>Majestic mountain peaks, charming villages, and world-class skiing adventures.</p>
+              <div class="dest-card-meta">
+                <span><i class="fa-solid fa-clock"></i> 6 Days</span>
+                <span class="dest-stars"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star-half-stroke"></i></span>
+              </div>
+            </div>
+          </div>
+          <!-- Paris -->
+          <div class="dest-card reveal" data-category="city cultural" style="transition-delay: 0.35s;">
+            <div class="dest-card-img">
+              <img src="https://images.unsplash.com/photo-1502602898657-3e91760cbb34?w=700&q=80" alt="Paris">
+              <div class="dest-card-badge"><i class="fa-solid fa-heart" style="color:var(--coral);"></i> Romantic</div>
+              <div class="dest-card-price">From $1,099</div>
+            </div>
+            <div class="dest-card-body">
+              <h3>Paris, France</h3>
+              <p>The City of Lights — iconic landmarks, world-class cuisine, and timeless romance.</p>
+              <div class="dest-card-meta">
+                <span><i class="fa-solid fa-clock"></i> 5 Days</span>
+                <span class="dest-stars"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></span>
+              </div>
+            </div>
+          </div>
+          <!-- Machu Picchu -->
+          <div class="dest-card reveal" data-category="nature cultural" style="transition-delay: 0.4s;">
+            <div class="dest-card-img">
+              <img src="https://images.unsplash.com/photo-1587595431973-160d0d94add1?w=700&q=80" alt="Machu Picchu">
+              <div class="dest-card-badge"><i class="fa-solid fa-mountain-sun" style="color:var(--teal);"></i> Adventure</div>
+              <div class="dest-card-price">From $1,799</div>
+            </div>
+            <div class="dest-card-body">
+              <h3>Machu Picchu, Peru</h3>
+              <p>Walk among ancient Incan ruins perched high in the Andes mountains.</p>
+              <div class="dest-card-meta">
+                <span><i class="fa-solid fa-clock"></i> 7 Days</span>
+                <span class="dest-stars"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star-half-stroke"></i></span>
+              </div>
+            </div>
+          </div>
+          <!-- Dubai -->
+          <div class="dest-card reveal" data-category="city beach" style="transition-delay: 0.45s;">
+            <div class="dest-card-img">
+              <img src="https://images.unsplash.com/photo-1512453979798-5ea266f8880c?w=700&q=80" alt="Dubai">
+              <div class="dest-card-badge"><i class="fa-solid fa-building" style="color:var(--ocean-light);"></i> Modern</div>
+              <div class="dest-card-price">From $1,399</div>
+            </div>
+            <div class="dest-card-body">
+              <h3>Dubai, UAE</h3>
+              <p>Futuristic skyline, luxury shopping, desert safaris, and golden beaches.</p>
+              <div class="dest-card-meta">
+                <span><i class="fa-solid fa-clock"></i> 5 Days</span>
+                <span class="dest-stars"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==========================================
+         FOOTER
+         ========================================== -->
+    <footer class="footer">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <div class="logo"><i class="fa-solid fa-earth-americas"></i> Wandersphere</div>
+          <p>Your trusted travel companion for over 12 years. Discover, plan, and experience the world's most incredible destinations.</p>
+          <div class="social-links">
+            <a href="https://www.facebook.com/share/1Ga3H48wUg/" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
+            <a href="https://x.com/006_hemu36920" aria-label="Twitter"><i class="fa-brands fa-x-twitter"></i></a>
+            <a href="https://www.instagram.com/hemu_006__?igsh=MWFtNW92emt5N3NkYQ==" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+            <a href="#" aria-label="YouTube"><i class="fa-brands fa-youtube"></i></a>
+            <a href="#" aria-label="Pinterest"><i class="fa-brands fa-pinterest-p"></i></a>
+          </div>
+        </div>
+        <div>
+          <h4>Quick Links</h4>
+          <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="destinations.html">Destinations</a></li>
+            <li><a href="contact.html">Plan Your Journey</a></li>
+            <li><a href="login.html">Login</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4>Top Destinations</h4>
+          <ul>
+            <li><a href="destinations.html">Bali, Indonesia</a></li>
+            <li><a href="destinations.html">Venice, Italy</a></li>
+            <li><a href="destinations.html">Kyoto, Japan</a></li>
+            <li><a href="destinations.html">Santorini, Greece</a></li>
+            <li><a href="destinations.html">Maldives</a></li>
+          </ul>
+        </div>
+        <div class="footer-newsletter">
+          <h4>Newsletter</h4>
+          <p>Get exclusive deals and travel inspiration straight to your inbox.</p>
+          <form class="newsletter-form" onsubmit="handleNewsletter(event)">
+            <input type="email" placeholder="Your email address" required>
+            <button type="submit"><i class="fa-solid fa-paper-plane"></i></button>
+          </form>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2025 Wandersphere Travel. All rights reserved. Made with <i class="fa-solid fa-heart" style="color:var(--coral);"></i> for adventurers.</p>
+      </div>
+    </footer>
+  </div>
+
+  <!-- Back to Top Button -->
+  <button class="back-to-top" id="backToTop" onclick="window.scrollTo({top:0,behavior:'smooth'})">
+    <i class="fa-solid fa-arrow-up"></i>
+  </button>
+
+  <!-- Shared JavaScript -->
+  <script src="script.js"></script>
+</body>
+</html>
